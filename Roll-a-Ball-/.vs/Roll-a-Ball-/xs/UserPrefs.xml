@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{E2E88560-32E4-9493-AA0B-A4A44C13FE30}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/StartGame.cs">
+    <Files>
+      <File FileName="Assets/Script/PlayerController.cs" Line="70" Column="24" />
+      <File FileName="Assets/Script/CameraController.cs" />
+      <File FileName="Assets/Script/Rotator.cs" />
+      <File FileName="Assets/Script/StartGame.cs" Line="9" Column="33" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Roll-a-Ball-" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Script" expanded="True">
+                <Node name="StartGame.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e62a781a-729d-4491-84e1-6a8afb150f4c" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
