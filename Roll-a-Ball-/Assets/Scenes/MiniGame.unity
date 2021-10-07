@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 33984074}
   m_Layer: 0
   m_Name: NorthWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 33984072}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 0.5, y: 2, z: 20.5}
+  m_LocalScale: {x: 0.5, y: 5, z: 20.5}
   m_Children: []
   m_Father: {fileID: 321415577}
   m_RootOrder: 3
@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 483413173}
   m_Layer: 0
   m_Name: SouthWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1653,6 +1653,8 @@ MonoBehaviour:
   pickUpSound: {fileID: 971058709}
   countText: {fileID: 63399361}
   winTextObject: {fileID: 989843490}
+  colorWall: {fileID: 2100000, guid: ffb2c87a91bbe439d8ad4533aaefb41f, type: 2}
+  mapForce: 200
 --- !u!114 &1275824825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1940,9 +1942,10 @@ GameObject:
   - component: {fileID: 1630914268}
   - component: {fileID: 1630914267}
   - component: {fileID: 1630914266}
+  - component: {fileID: 1630914269}
   m_Layer: 0
   m_Name: WestWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1956,7 +1959,7 @@ Transform:
   m_GameObject: {fileID: 1630914264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -10, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 2, z: 20.5}
+  m_LocalScale: {x: 0.5, y: 5, z: 20.5}
   m_Children: []
   m_Father: {fileID: 321415577}
   m_RootOrder: 0
@@ -2021,6 +2024,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630914264}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1630914269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630914264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f917ab4a98c43aa8f939cea48ae0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHot: 0
 --- !u!4 &1717802370 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6237704150979092534, guid: ca16e67a119ce414baf4a7dc1155fd6e,
@@ -2116,7 +2132,7 @@ GameObject:
   - component: {fileID: 1778794711}
   m_Layer: 0
   m_Name: EastWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2130,7 +2146,7 @@ Transform:
   m_GameObject: {fileID: 1778794709}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 10, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 2, z: 20.5}
+  m_LocalScale: {x: 0.5, y: 5, z: 20.5}
   m_Children: []
   m_Father: {fileID: 321415577}
   m_RootOrder: 2

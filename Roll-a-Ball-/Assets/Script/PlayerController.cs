@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,12 +15,15 @@ public class PlayerController : MonoBehaviour
 	public AudioSource pickUpSound;
 	public TextMeshProUGUI countText;
 	public GameObject winTextObject;
+	public Material colorWall;
+	public int mapForce = 200;
 
 	private float movementX;
 	private float movementY;
 
 	private Rigidbody rb;
 	private int count;
+	private int health;
 
 	// At the start of the game..
 	void Start()
@@ -28,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
 		// Set the count to zero 
 		count = 0;
+		health = 3;
 
 		SetCountText();
 
@@ -37,9 +43,18 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
-		if(Input.GetButtonDown("Jump"))
+		Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+
+		if (Input.GetButtonDown("Jump"))
 		{
 			rb.AddForce(new Vector3(0f, jumpForce, 0f));
+		}
+
+		//Added for mod
+		//dash
+		if (Input.GetKeyDown(KeyCode.LeftShift))
+		{
+			rb.AddForce(movement * speed * 100);
 		}
 	}
 
@@ -68,12 +83,28 @@ public class PlayerController : MonoBehaviour
 
 			GameObject particles = Instantiate(pickUpParticles, transform.position, Quaternion.identity);
 			Destroy(particles, 2f); 
-
-
 		}
 	}
 
-	void OnMove(InputValue value)
+    void OnCollisionEnter(Collision collision)
+    {
+		Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+		if (collision.gameObject.CompareTag("Wall"))
+		{
+			collision.gameObject.GetComponent<MeshRenderer>().material = colorWall;
+			rb.AddForce(-movement*10000);
+			if (collision.gameObject.GetComponent<MeshRenderer>().material = colorWall)
+			{
+				health -= 1;
+				if (health <= 0) {
+					SceneManager.LoadScene(1);
+				}
+			}
+		}
+
+	}
+
+    void OnMove(InputValue value)
 	{
 		Vector2 v = value.Get<Vector2>();
 
@@ -88,7 +119,7 @@ public class PlayerController : MonoBehaviour
 		if (count >= 12)
 		{
 			// Set the text value of your 'winText'
-			winTextObject.SetActive(true);
+			SceneManager.LoadScene(2);
 		}
 	}
 }
